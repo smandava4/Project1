@@ -1,0 +1,229 @@
+/* Global Styles */
+* {
+    overflow: hidden;
+}
+
+/* Body Styles */
+body {
+    background-image: url(thunder.gif);
+    background-size: cover;
+}
+
+/* Rain Effect */
+section:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(rain.png);
+    animation: rain 0.4s linear infinite;
+    opacity: 0;
+}
+
+@keyframes rain {
+    0% {
+        background-position: 0 0;
+        opacity: 1;
+        filter: hue-rotate(0);
+    }
+    100% {
+        background-position: 6% 80%;
+        opacity: 1;
+        filter: hue-rotate(360deg);
+    }
+}
+
+/* Weapon animation */
+.weapon {
+    position: fixed;
+    bottom: 0px;
+    width: 50%;
+    height: 40%;
+    background-image: url(sniper.png);
+    background-size: cover;
+    z-index: 3;
+    cursor: crosshair;
+    animation: weaponmove 4s infinite alternate;
+    transition: 1s cubic-bezier(0, 0.43, 1, 0);
+}
+
+@keyframes weaponmove {
+    0% {
+        height: 60%;
+        left: -10%;
+    }
+    20% {
+        height: 70%;
+        left: 0%;
+    }
+	30% {
+        height: 80%;
+        left: 20%;
+    }
+    40% {
+        height: 90%;
+        left: 30%;
+    }
+	50% {
+        height: 60%;
+        left: 40%;
+    }
+    60% {
+        height: 70%;
+        left: 50%;
+		width: 70%;
+    }
+    80% {
+        height: 90%;
+        left: 40%;
+    }
+    100% {
+        height: 100%;
+        left: 20%;
+		width: 100%;
+    }
+}
+
+/* Dragon Animations */
+.dragon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    cursor: crosshair;
+    width: 800px;
+    height: 500px;
+    background-image: url(dragon.gif);
+    background-repeat: no-repeat;
+    transition: 0.3s cubic-bezier(0, 0.43, 1, 0);
+    animation: move 20s;
+    animation-iteration-count: infinite;
+}
+.dragon1 { top: 10%; transform: scale(0.5); animation-delay: -10s !important; }
+.dragon2 { top: 20%; transform: scale(0.6); animation-delay: -5s !important; }
+.dragon3 { top: 30%; transform: scale(0.6); animation-delay: -3s !important; }
+.dragon4 { top: 40%; transform: scale(0.5); animation-delay: -12s !important; }
+.dragon5 { top: 50%; transform: scale(0.4); animation-delay: -15s !important; }
+.dragon6 { top: 60%; transform: scale(0.7); animation-delay: -10s !important; }
+.dragon7 { top: 70%; transform: scale(0.4); animation-delay: -6s !important; }
+.dragon8 { top: 80%; transform: scale(0.7); animation-delay: -4s !important; }
+
+@keyframes move {
+    0% { left: 1%;}
+    20% { left: 20%; top: 20%; }
+    40% { top: 30%; left: 50%; }
+    60% { top: 60%; left: 70%; }
+    80% { top: 10%; left: 20%; }
+    90% { top: 15%; left: 10%;}
+    100% { top: 30%; left: 0%; background-image: none;}
+}
+
+/* Title Animation */
+.title {
+    z-index: 1;
+    font-size: 125px;
+    color: black;
+    padding-top: 15%;
+    font-family: "Fredericka the Great", cursive;
+    letter-spacing: 3px;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+    letter-spacing: 3px;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: white;
+    animation: intro 5s linear;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    background-image: url(smoke.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* Instructions */
+.quest {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    font-size: 70px;
+    font-weight: bold;
+    font-family: Andale Mono, monospace;
+    color: #ffff99;
+    letter-spacing: 0.5px;
+    animation: intro 5s linear;
+    animation-delay: 2s;
+    opacity: 0;
+    background-image: url(smoke.gif);
+    background-size: cover;
+}
+
+@keyframes intro {
+    0% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0.9;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    70% {
+        opacity: 0.4;
+    }
+    80% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0;
+        background-image: none;
+    }
+}
+
+/* Score Animation */
+.score {
+    position: absolute;
+    width: 550px;
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 450px;
+    top: 30px;
+    right: 30px;
+    height: auto;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Fredericka the Great";
+    color: red;
+    background-color: pink;
+    letter-spacing: 3px;
+    animation: scorepopup 2s linear infinite;
+    animation-delay: 10s;
+    width: 280px;
+}
+
+@keyframes scorepopup {
+    50% { font-size: 30px; }
+}
+
+/* Timer Styles */
+.timer {
+    position: relative;
+    margin-top: 50px;
+    color: white;
+    font-size: 30px;
+    font-style: italic;
+}
+
+#devteam{
+    color: white;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    z-index: 1000;
+}
